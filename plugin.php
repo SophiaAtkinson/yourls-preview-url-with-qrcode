@@ -1,11 +1,12 @@
 <?php
 /*
 Plugin Name: Preview URL with QR Code
-Plugin URI: https://github.com/dennydai
+Plugin URI: https://github.com/SophiaAtkinson/yourls-preview-url-with-qrcode
 Description: Preview URLs before you're redirected there
-Version: 1.0
-Author: Denny Dai
-Author URI: https://dennydai.github.io
+Version: 1.1
+Author: Sophia Atkinson
+Author URI: https:/sophia.wtf
+Plugin Based Off Of DennyDai's Preview URL with QR Code
 */
 
 // EDIT THIS
@@ -39,7 +40,7 @@ function dd_preview_show( $keyword ) {
         $url   = yourls_get_keyword_longurl( $keyword );
         $base  = YOURLS_SITE;
         $char  = DD_PREVIEW_CHAR;
-        $qrcode = 'data:image/png;base64,'.base64_encode(file_get_contents('http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=M&chl='.YOURLS_SITE.'/'.$keyword));
+        $qrcode = 'https://chart.apis.google.com/chart?chs=256x256&cht=qr&chld=M&chl='.YOURLS_SITE.'/'.$keyword;
 
         echo <<<HTML
         <h2>Link Preview</h2>
